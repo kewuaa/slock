@@ -128,6 +128,7 @@ static void
 readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
        const char *hash)
 {
+	static int error_num = 0;
 	XRRScreenChangeNotifyEvent *rre;
 	char buf[32], passwd[256], *inputhash;
 	int num, screen, running, failure, oldc;
@@ -165,7 +166,10 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
 				else
 					running = !!strcmp(inputhash, hash);
 				if (running) {
-					XBell(dpy, 100);
+					error_num += 1;
+					if (error_num > max_error_number) {
+						XBell(dpy, 100);
+					}
 					failure = 1;
 				}
 				explicit_bzero(&passwd, sizeof(passwd));

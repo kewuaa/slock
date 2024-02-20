@@ -10,3 +10,6 @@ static const char *colorname[NUMCOLS] = {
 
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
+
+/* After the number of errors, a warning bell will be issued */
+static const int max_error_number = 5;
