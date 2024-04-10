@@ -2,6 +2,7 @@ pkgname=slock
 pkgver="0.1.0"
 pkgrel=1
 arch=("x86_64")
+depends=("imlib2")
 makedepends=("gcc" "make")
 
 
