@@ -2,7 +2,13 @@ pkgname=slock
 pkgver="0.1.0"
 pkgrel=1
 arch=("x86_64")
-depends=("imlib2")
+depends=(
+    "libx11"
+    "libxcrypt"
+    "libxext"
+    "libxrandr"
+    "imlib2"
+)
 makedepends=("gcc" "make")
 
 
