@@ -2,3 +2,6 @@
 *.rej
 *.orig
 slock
+/srct
+/pkg
+*.zst

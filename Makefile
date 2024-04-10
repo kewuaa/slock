@@ -20,7 +20,8 @@ slock: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean:
-	rm -f slock ${OBJ} slock-${VERSION}.tar.gz
+	rm -rf src pkg
+	rm -f slock ${OBJ} slock-${VERSION}.tar.gz *.zst
 
 dist: clean
 	mkdir -p slock-${VERSION}
